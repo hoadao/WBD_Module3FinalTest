@@ -1,0 +1,26 @@
+<table class="table">
+  <thead class="thead-dark" style="border: black">
+  <tr>
+    <th scope="col" colspan="2">Danh sách đọc</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let book of books ; index as i" >
+    <td>{{book.name}}</td>
+    <td>
+      <form [formGroup]="formMarkBook" (ngSubmit)="mark(book)">
+        <button class="btn btn-primary btn-block">Đã đọc</button>
+      </form>
+    </td>
+  </tr>
+
+  </tbody>
+</table>
+<form [formGroup]="formCreateBook" (ngSubmit)="create()">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input  type="text" class="form-control" formControlName="name" id="name" placeholder="Enter name">
+    <button class="btn btn-primary btn-block">Create</button>
+  </div>
+</form>
+

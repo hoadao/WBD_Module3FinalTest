@@ -1,0 +1,15 @@
+<table class="table">
+  <thead class="thead-dark" style="border: black">
+  <tr>
+    <th scope="col" colspan="2">Danh sách đã đọc</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let book of books ; index as i" >
+    <td>{{book.name}}</td>
+    <td>
+      <button type="button" class="btn btn-warning" (click)="reMark(i)">Đọc lại</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
